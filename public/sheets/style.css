@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(36, 36, 36, 1);
+    overflow: hidden;
+}
+
+#top_bar{
+    width: 100%;
+    font-family: Georgia, serif;
+    align-items: center;
+    color: white;
+}
+
+.top_clickables{
+    float: right;
+    margin: 10px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+#profile_pic{
+    width: 60px;
+    height: 60px;
+    margin-left: 50px;
+    margin-right: 10px;
+    border: 1px solid grey;
+    border-radius: 60px;
+    float: left;
+    cursor: pointer;
+}
+
+#main_pic{
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    width: 30%;
+    background-color: rgba(22, 25, 35, 1);
+    border-radius: 25px;
+    box-shadow: -5px -5px 5px 5px rgba(22, 25, 35, 1);
+    cursor: pointer;
+}

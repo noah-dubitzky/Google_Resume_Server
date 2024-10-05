@@ -1,0 +1,16 @@
+{
+  "name": "google_cloud_resume_server",
+  "version": "1.0.0",
+  "description": "Resume server for google cloud",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "Noah Dubitzky",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mysql": "^2.18.1",
+    "nodemailer": "^4.7.0"
+  }
+}

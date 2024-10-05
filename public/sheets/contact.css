@@ -1,0 +1,16 @@
+#contact_info{
+
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    top: 20%;
+    color: white;
+    background-color: rgba(22, 25, 35, 1);
+    border-radius: 25px;
+    box-shadow: -5px -5px 5px 5px rgba(22, 25, 35, 1);
+}
+
+#main_pic{
+
+    display: inline-block;
+}
