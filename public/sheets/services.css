@@ -1,0 +1,35 @@
+#content{
+
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    width: 70%;
+    opacity: 0;
+}
+
+.service{
+
+    padding: 10px;
+    background-color: red;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: top;
+    color: white;
+
+    background-color: rgba(22, 25, 35, 1);
+}
+
+.title{
+    font-size: x-large;
+}
+
+.description{
+
+    display: none;
+    opacity: 0;
+}

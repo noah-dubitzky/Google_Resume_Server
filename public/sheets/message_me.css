@@ -1,0 +1,39 @@
+#Message_Box{
+
+    position: absolute;
+    font-family: Georgia, serif;
+    left: 50%;
+    top: 20%;
+    background-color: rgba(22, 25, 35, 1);
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+}
+
+#Message_Box input, textarea{
+
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    text-align: top;
+    font-size: large;
+    font-weight: 400;
+
+}
+
+#content{
+    transform-origin: 0% 0%;
+    position: absolute;
+    font-family: Georgia, serif;
+    top: 55%;
+    left: 9%;
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#send_message{
+
+    display: block;
+    cursor: pointer;
+}

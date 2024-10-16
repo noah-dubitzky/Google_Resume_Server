@@ -1,0 +1,73 @@
+#Content{
+
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-family: Georgia, serif;
+    width: 60%;
+    height: 60%;
+    background-color: rgba(22, 25, 35, 1);
+    border-radius: 10px;
+    color: white;
+
+    display: flex;
+    align-items: top;
+}
+
+#sidebar{
+
+    float: left;
+    border-color: black;
+    border-right-style: solid;
+    box-shadow: 1px 0px 5px black;
+}
+
+#sidebar p{
+
+    margin: 0px;
+    padding: 20px;
+
+}
+
+#new_message_header{
+
+    border-color: black;
+    border-bottom-style: solid;
+    font-size: 130%;
+    color: grey;
+}
+
+.sender{
+    border-color: black;
+    border-bottom-style: dotted;
+    cursor: pointer;
+}
+
+#person_selected{
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+
+    overflow-y: scroll;
+
+}
+
+.message{
+
+    text-align: left;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    margin-bottom: 10px;
+    
+}
+
+.message a{
+
+    font-size: small;
+}
