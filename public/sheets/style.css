@@ -3,19 +3,6 @@ body{
     overflow: hidden;
 }
 
-#top_bar{
-    width: 100%;
-    font-family: Georgia, serif;
-    align-items: center;
-    color: white;
-}
-
-.top_clickables{
-    float: right;
-    margin: 10px;
-    margin-right: 50px;
-    cursor: pointer;
-}
 
 #profile_pic{
     width: 60px;

@@ -1,14 +1,35 @@
 $(document).ready(function(){
 
+    PopulateTopBar()
+
     $Top_Clickables = $(".top_clickables");
     $Profile_Pic = $("#profile_pic");
     $Main_Pic = $("#main_pic");
+    $top_bar = $('#top_bar');
 
     $resume = $("#resume");
     $home = $("#home");
     $contact = $("#contact");
     $services = $("#services");
     $education= $("#education");
+
+    $top_bar.css({
+        'width': '100%',
+        'font-family': 'Georgia, serif',
+        'align-items': 'center',
+        'color': 'white',
+        'padding': '10px'
+    });
+
+    // Add CSS to the top clickables
+    $Top_Clickables.css({
+        'float': 'right',
+        'margin': '10px',
+        'margin-right': '50px',
+        'cursor': 'pointer',
+        'color': 'white',
+        'text-decoration': 'none'
+    });
 
     $Top_Clickables.on("mouseenter", function(){
 
@@ -82,4 +103,26 @@ function GetPicMetrics($Main_Pic){
     localStorage.setItem("pic_top", pic_metrics.top);
     localStorage.setItem("pic_right", pic_metrics.right);
 
+}
+
+function PopulateTopBar(){
+    // Define the HTML block
+    var htmlBlock = `
+    <div id="top_bar">
+        <img id="profile_pic" src="assets/Profile_Main.png" alt="^">
+        <h3 style="display: inline-block; float: left;">MyBio</h3>
+        <a class="top_clickables" id="projects">My Projects</a>
+        <a class="top_clickables" id="education">Education</a>
+        <a class="top_clickables" id="services">Services</a>
+        <a class="top_clickables" id="resume">Resume</a>
+        <a class="top_clickables" id="contact">Contact</a>
+        <a class="top_clickables" id="index">Home</a>
+    </div>`;
+
+    //other pages to add
+    //<a class="top_clickables" id="admin">Admin</a>
+    //<a class="top_clickables" id="email_me">Email Me</a>
+
+    // Insert the HTML block right after the <head> tag
+    $('head').after(htmlBlock);
 }

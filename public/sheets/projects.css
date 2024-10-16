@@ -1,0 +1,15 @@
+#main_pic{
+    display: inline-block;
+}
+
+#content{
+    font-family: Georgia, serif;
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20%; /* Move down 50% of the viewport height */
+    left: 50%; /* Move right 50% of the viewport width */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+}
