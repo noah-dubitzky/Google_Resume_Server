@@ -5,8 +5,6 @@ $(document).ready(function(){
     $services = $(".service");
     $content = $("#content");
 
-    defaultHeight = $services.first().height();
-
     pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
 
     $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
@@ -23,9 +21,13 @@ $(document).ready(function(){
         opacity: 1
     }, 1500);
 
+    $services.each(function() {
+        $(this).data("originalHeight", $(this).height());
+    });
+
     $services.on("mouseenter", function(){
 
-        descriptionHeight = $(this).children(".description").height() + $(this).height() + 15;
+        descriptionHeight = $(this).children(".description").outerHeight() + $(this).children(".title").outerHeight() + $(this).outerHeight();
 
         $(this).animate({
             height: descriptionHeight + "px"
@@ -58,7 +60,7 @@ $(document).ready(function(){
 
                 $(this).parent().animate({
 
-                    height: defaultHeight
+                    height: $(this).parent().data("originalHeight")
                 });
            }
        });

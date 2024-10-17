@@ -7,14 +7,12 @@ $(document).ready(function(){
 
     pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
 
-    $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right, "transform": "translate(-100%, 20%)"});
+    //$Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
 
     var content_position = $content.position();
 
     $Main_Pic.animate({
-        top: content_position.top,
-        width: "10%",
-        left: content_position.left,
+       // width: "30%"
     }, 1000);
 
     $contact_info.animate({
