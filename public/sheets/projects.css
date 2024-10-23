@@ -1,6 +1,7 @@
 body{
     background-color: rgba(36, 36, 36, 1);
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 
@@ -21,28 +22,44 @@ body{
     border-radius: 25px;
     box-shadow: -5px -5px 5px 5px rgba(22, 25, 35, 1);
     cursor: pointer;
-    width: 100%;
+    width: 17%;
     height: auto;
 }
 
-#content{
+#title{
     font-family: Georgia, serif;
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     color: white;
     cursor: pointer;
-    position: absolute;
-    top: 20%; /* Move down 50% of the viewport height */
-    left: 45%; /* Move right 50% of the viewport width */
-    height: 20%;
-    width: 10%;
-    transform: translate(-50%, -50%); /* Adjust position to center */
+    height: fit-content;
+    width: fit-content;
+    opacity: 0;
 }
 
-#content > h1{
+#title > h1{
 
     margin: 0;
     margin-left: 20px;
-    height: 100%;
+    font-size: 400%;
+}
+
+.content{
+    position: relative;
+    width: 70%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.content p{
+
+    color: white;
+    font-size: 120%;
+}
+
+iframe {
+    margin-right: 10px;
+    float: left;
 }

@@ -14,7 +14,12 @@ $(document).ready(function(){
     $education= $("#education");
 
     $top_bar.css({
+        'position': 'sticky',
+        'top': '0',
+        'z-index': '10',
+        'background-color': 'rgba(36, 36, 36, 1)',
         'width': '100%',
+        'height': '40px',
         'font-family': 'Georgia, serif',
         'align-items': 'center',
         'color': 'white',
