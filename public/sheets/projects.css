@@ -50,16 +50,18 @@ body{
     position: relative;
     width: 70%;
     margin: auto;
-    margin-top: 60px;
-}
-
-.content p{
-
-    color: white;
+    margin-top: 100px;
+    background-color: rgb(14 36 64);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     font-size: 120%;
+    color: white;
 }
 
 iframe {
     margin-right: 10px;
+    margin-top: 20px;
     float: left;
 }
