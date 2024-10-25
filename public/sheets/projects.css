@@ -60,7 +60,7 @@ body{
     color: white;
 }
 
-iframe {
+iframe, .content > img {
     margin-right: 10px;
     margin-top: 20px;
     float: left;
