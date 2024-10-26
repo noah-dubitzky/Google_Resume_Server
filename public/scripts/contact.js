@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $Main_Pic = $("#main_pic");
     $section_main = $(".section");
-    $contact_info = $("#contact_info");
+    $contacts = $(".contact");
 
     pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
 
@@ -15,10 +15,30 @@ $(document).ready(function(){
 
     }, 1000);
 
-    $contact_info.animate({
+    $contacts.each(function(){
 
-        opacity: "1",
+        $(this).on("mouseenter", function(){
 
-    }, 1000);
+            $(this).children("img").animate({
+                
+                width: "50%",
+                height: "50%",
+
+            });
+
+        });
+
+        $(this).on("mouseleave", function(){
+
+            $(this).children("img").animate({
+                
+                width: "30%",
+                height: "30%",
+
+            });
+
+        });
+
+    });
 
 });
