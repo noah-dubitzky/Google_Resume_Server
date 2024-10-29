@@ -4,13 +4,14 @@
     font-family: Georgia, serif;
     left: 50%;
     top: 20%;
+    width: 40%;
     background-color: rgba(22, 25, 35, 1);
     padding: 10px;
     border-radius: 25px;
     color: white;
 }
 
-#Message_Box input, textarea{
+#Message_Box input, textarea, select{
 
     border-radius: 5px;
     font-family: Georgia, serif;
@@ -26,6 +27,7 @@
     font-family: Georgia, serif;
     top: 55%;
     left: 9%;
+    font-size: 1dvw;
     display: inline-block;
     padding: 20px;
     color: white;

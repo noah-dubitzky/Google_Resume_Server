@@ -116,6 +116,7 @@ function PopulateTopBar(){
     <div id="top_bar">
         <img id="profile_pic" src="assets/Profile_Main.png" alt="^">
         <h3 style="display: inline-block; float: left;">MyBio</h3>
+        <a class="top_clickables" id="message_me">Message Me</a>
         <a class="top_clickables" id="projects">My Projects</a>
         <a class="top_clickables" id="education">Education</a>
         <a class="top_clickables" id="services">Services</a>

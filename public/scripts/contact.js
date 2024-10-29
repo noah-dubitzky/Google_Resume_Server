@@ -19,23 +19,21 @@ $(document).ready(function(){
 
         $(this).on("mouseenter", function(){
 
-            $(this).children("img").animate({
+            $(this).animate({
                 
-                width: "50%",
-                height: "50%",
-
-            });
+                width: "45%",
+        
+            }, 500);
 
         });
 
         $(this).on("mouseleave", function(){
 
-            $(this).children("img").animate({
+            $(this).animate({
                 
-                width: "30%",
-                height: "30%",
+                width: "40%",
 
-            });
+            }, 500);
 
         });
 

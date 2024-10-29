@@ -19,7 +19,7 @@ $(document).ready(function(){
     $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
     
     $Main_Pic.animate({
-        top: "15%",
+        top: "10%",
         width: "10%",
         right: "87%",
         
