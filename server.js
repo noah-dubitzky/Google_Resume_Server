@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-require("./app/routes/messages_routes.js")(app);
-require("./app/routes/persons_routes.js")(app);
+//require("./app/routes/messages_routes.js")(app);
+//require("./app/routes/persons_routes.js")(app);
 require("./app/routes/admins_routes.js")(app);
 require("./app/routes/email_routes.js")(app);
-require("./app/routes/companies.js")(app);
+require("./app/routes/sender_routes.js")(app);
 
 app.get('/', function(req, res) {
     res.send('hello world');
