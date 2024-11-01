@@ -4,10 +4,6 @@ module.exports = app => {
     // Create a new Customer
     app.post("/message", messages.create);
 
-    app.get("/message/:PersonID", messages.findMessage);
-
-    app.get("/senders", messages.findAllSenders);
-
-    app.get("/sendersmessages", messages.findAllMessagesAndSenders);
+    app.get("/message/:sender_id", messages.findMessage);
   
   };

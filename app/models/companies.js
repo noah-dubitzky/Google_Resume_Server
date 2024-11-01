@@ -1,11 +1,11 @@
 const sql = require("./db.js");
 
 // constructor
-const Companies = function(company) {
-  this.companyName = company.name;
+const Company = function(company) {
+  this.company_name = company.name;
 };
 
-Companies.create = (newcompany, result) => {
+Company.create = (newcompany, result) => {
     sql.query("INSERT INTO companies SET ?", newcompany, (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -18,8 +18,8 @@ Companies.create = (newcompany, result) => {
     });
   };
 
-Companies.findByName = (companyName, result) => {
-  sql.query(`select * from companies where companies.state_name='${companyName}'`, (err, res) => {
+Company.findByName = (companyName, result) => {
+  sql.query(`select * from companies where companies.company_name='${companyName}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -37,4 +37,4 @@ Companies.findByName = (companyName, result) => {
   });
 };
 
-module.exports = Companies;
+module.exports = Company;

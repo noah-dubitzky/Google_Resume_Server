@@ -2,6 +2,7 @@ const sql = require("./db.js");
 
 // constructor
 const Admin = function(admin) {
+  this.name = admin.name;
   this.username = admin.username;
   this.password = admin.password;
 };

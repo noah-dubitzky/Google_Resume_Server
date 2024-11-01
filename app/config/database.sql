@@ -37,7 +37,8 @@ CREATE TABLE IF NOT EXISTS Senders (
 CREATE TABLE IF NOT EXISTS Messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     sender_id INT,
-    message TEXT NOT NULL,
+    content TEXT NOT NULL,
+    date VARCHAR(45) NOT NULL,
     FOREIGN KEY (sender_id) REFERENCES Senders(id) ON DELETE CASCADE
 );
 

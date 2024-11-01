@@ -35,14 +35,14 @@ exports.create = (req, res) => {
     });
   }
 
-  // Create a Customer
+  // Create a message
   const message = new Message({
-    personID: req.body.personID,
+    sender_id: req.body.sender_id,
     content: req.body.content,
 	  date: req.body.date,
   });
 
-  // Save Customer in the database
+  // Save message in the database
   Message.create(message, (err, data) => {
     if (err)
       res.status(500).send({
@@ -54,6 +54,7 @@ exports.create = (req, res) => {
   
 };
 
+/*
 exports.findAllSenders = (req, res) => {
   Message.getAllSenders((err, data) => {
     if (err)
@@ -97,15 +98,15 @@ exports.findOne = (req, res) => {
 */
 
 exports.findMessage = (req, res) => {
-  Message.findBySender(req.params.PersonID, (err, data) => {
+  Message.findBySender(req.params.sender_id, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found messages with personID ${req.params.PersonID}.`
+          message: `Not found messages with sender id ${req.params.sender_id}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving messages with personID " + req.params.PersonID
+          message: "Error retrieving messages with sender id " + req.params.sender_id
         });
       }
     } else res.send(data);

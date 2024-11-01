@@ -2,7 +2,7 @@ const sql = require("./db.js");
 
 // constructor
 const Message = function(message) {
-  this.personID = message.personID;
+  this.sender_id = message.sender_id;
   this.content = message.content;
   this.date = message.date;
 };
@@ -39,7 +39,6 @@ Message.findById = (messageId, result) => {
     result({ kind: "not_found" }, null);
   });
 };
-*/
 
 Message.getAllMessagesAndSenders = result => {
   sql.query("SELECT * from messages, persons where messages.PersonID=persons.PersonID;", (err, res) => {
@@ -54,9 +53,10 @@ Message.getAllMessagesAndSenders = result => {
   });
 };
 
+*/
 
-Message.findBySender = (PersonID, result) => {
-  sql.query(`select * from messages where messages.PersonID='${PersonID}'`, (err, res) => {
+Message.findBySender = (sender_id, result) => {
+  sql.query(`select * from messages where messages.sender_id='${sender_id}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -75,7 +75,7 @@ Message.findBySender = (PersonID, result) => {
 };
 
 
-
+/*
 Message.getAllSenders = result => {
   sql.query("SELECT DISTINCT First_Name, Last_Name, Email, persons.PersonID FROM messages, persons where messages.PersonID=persons.PersonID;", (err, res) => {
     if (err) {
@@ -88,8 +88,6 @@ Message.getAllSenders = result => {
     result(null, res);
   });
 };
-
-/*
 
 User.updateById = (id, user, result) => {
   sql.query(
