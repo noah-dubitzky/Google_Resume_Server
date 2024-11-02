@@ -6,6 +6,9 @@ $(document).ready(function(){
     $full_name = $("#full_name");
     $email = $("#email");
     $message = $("#message");
+    $phone = $("#phone");
+    $company = $("#company");
+    $state = $("#states");
 
     /*
     Fields: Full name, email, phone number, company, state, message
@@ -65,21 +68,31 @@ $(document).ready(function(){
 
     $send_message.on("click", function(){
 
-        full_name = ParseFullName($full_name.val());
+        
+        full_name = $full_name.val();
+        phone = $phone.val();
+        email = $email.val();
+        company = $company.val();
+        state = $state.val();
 
+        /*
         const date = new Date();
 
         formatted_date = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
 
         alert(formatted_date)
+        */
 
-        newPerson = {
+        var sender = {
 
-            First_Name: full_name[0],
-            Last_Name: full_name[1],
-            Email: $email.val()
+            full_name: full_name,
+            number: phone,
+            email: email,
+            company: company,
+            state: state
         }
 
+        /*
         newMessage = {
 
             personID: 1,
@@ -89,11 +102,14 @@ $(document).ready(function(){
 
         localStorage.setItem("sender_full_name", full_name[0] + " " + full_name[1]);
         localStorage.setItem("sender_email", newPerson.Email);
+        */
 
-        Send_Message(newMessage, newPerson);
+        alert("sending");
+        CheckIfSenderExists(sender);
 
     });
 
+    /*
     function ParseFullName(full_name){
 
         var name = full_name.split(" ");
@@ -162,6 +178,7 @@ $(document).ready(function(){
 		});
 
     }
+    */
 
     function populateStatesDropdown() {
         var states = [
@@ -225,5 +242,32 @@ $(document).ready(function(){
         });
     }
 
+    function CheckIfSenderExists(sender){
+        
+        alert("sent");
+
+        $.get("/sender/" + sender.full_name, function(data, status){
+
+			if(status == "success"){
+		
+                alert("found")
+                return true;
+		
+			}else{
+                alert("not found")
+            }
+			
+		}).fail(function(jqXHR, textStatus, errorThrown){
+		
+            if(jqXHR.status == 404) {
+
+                alert("not found")
+
+				return false;
+			
+			}
+		
+		});
+    }
 });
 
