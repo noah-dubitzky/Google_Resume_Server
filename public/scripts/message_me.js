@@ -66,98 +66,90 @@ $(document).ready(function(){
 
     }, 1000);
 
-    $send_message.on("click", function(){
-
+    $send_message.on("click", async function(){
         
         full_name = $full_name.val();
-        phone = $phone.val();
+        phone = parseInt($phone.val());
         email = $email.val();
         company = $company.val();
         state = $state.val();
 
-        /*
         const date = new Date();
 
         formatted_date = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
 
-        alert(formatted_date)
-        */
-
         var sender = {
 
-            full_name: full_name,
+            name: full_name,
             number: phone,
             email: email,
-            company: company,
-            state: state
+            company_id: parseInt( await GetCompanyId(company) ),
+            state_id: parseInt( await GetStateId(state) )
         }
 
-        /*
         newMessage = {
 
-            personID: 1,
+            sender_id: 1,
             content: $message.val(),
             date: formatted_date,
         }
 
-        localStorage.setItem("sender_full_name", full_name[0] + " " + full_name[1]);
-        localStorage.setItem("sender_email", newPerson.Email);
-        */
+        //localStorage.setItem("sender_full_name", full_name[0] + " " + full_name[1]);
+        //localStorage.setItem("sender_email", newPerson.Email);
 
-        alert("sending");
-        CheckIfSenderExists(sender);
+        SendMessage(sender, newMessage);
 
     });
 
-    /*
-    function ParseFullName(full_name){
+    async function GetCompanyId(company) {
 
-        var name = full_name.split(" ");
+        return new Promise((resolve) => {
 
-        return name;
+            $.get("/companies/" + company, function(data, status){
+
+                resolve(data.id);
+
+            }).fail(function(jqXHR, textStatus, errorThrown){
+            
+                if(jqXHR.status == 404) {
+
+                    //resolve(await CreateCompany(company));
+                
+                }
+            
+            });
+
+        });
     }
 
-    function Send_Message(message, person){
+    function GetStateId(state) {
 
-        $.post("/person", person, function(data, status){
+        return new Promise((resolve) => {
 
+            $.get("/states/" + state, function(data, status){
+
+                resolve(data.id);
+
+            });
+
+        });
+    }
+
+    function CreateSenderAndMessage(sender, message){
+
+        $.post("/sender", sender, function(data, status){
+					
 			if(status == "success"){
 		
-                message.personID = data.id;
-
-                FinishMessage(message)
+                message.sender_id = data.id;
+                CreateMessage(message);
 		
 			}
 			
-		}).fail(function(jqXHR, textStatus, errorThrown){
-		
-            if(jqXHR.status == 500) {
-
-				Send_Message_Existing_User(message, person);
-			
-			}
-		
 		});
-
     }
 
-    function Send_Message_Existing_User(message, person){
-
-        $.get("/person" + "/" + person.Email, function(data, status){
-
-            if(status == "success"){
-		
-                message.personID = data.PersonID;
-
-                FinishMessage(message)
-		
-			}
-
-        })
-
-    }
-
-    function FinishMessage(message){
+    function CreateMessage(message){
 
         $.post("/message", message, function(data, status){
 					
@@ -167,18 +159,8 @@ $(document).ready(function(){
 		
 			}
 			
-		}).fail(function(jqXHR, textStatus, errorThrown){
-		
-			if(jqXHR.status == 420) {
-
-				window.alert("Username is already taken");
-			
-			}	
-		
 		});
-
     }
-    */
 
     function populateStatesDropdown() {
         var states = [
@@ -236,38 +218,37 @@ $(document).ready(function(){
 
         $.each(states, function(index, state) {
             $('#states').append($('<option>', { 
-                value: state.code,
+                value: state.name,
                 text : state.name 
             }));
         });
     }
 
-    function CheckIfSenderExists(sender){
+    function SendMessage(sender, message){
         
         alert("sent");
 
-        $.get("/sender/" + sender.full_name, function(data, status){
+        $.get("/sender/" + sender.name, function(data, status){
 
 			if(status == "success"){
 		
-                alert("found")
-                return true;
+                //create message
+                message.sender_id = data.id;
+
+                CreateMessage(message);
 		
-			}else{
-                alert("not found")
-            }
+			}
 			
 		}).fail(function(jqXHR, textStatus, errorThrown){
 		
             if(jqXHR.status == 404) {
 
-                alert("not found")
-
-				return false;
+				CreateSenderAndMessage(sender, message);
 			
 			}
 		
 		});
     }
+
 });
 
