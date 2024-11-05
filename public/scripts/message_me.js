@@ -87,6 +87,8 @@ $(document).ready(function(){
             state_id: parseInt( await GetStateId(state) )
         }
 
+        alert("sender state Id " + sender.state_id);
+
         newMessage = {
 
             sender_id: 1,
@@ -113,7 +115,16 @@ $(document).ready(function(){
             
                 if(jqXHR.status == 404) {
 
-                    //resolve(await CreateCompany(company));
+                    newCompany = {
+
+                        company_name: company
+                    };
+
+                    $.post("/companies", newCompany, function(data, status){
+
+                        resolve(data.id);
+            
+                    });
                 
                 }
             
