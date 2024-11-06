@@ -41,23 +41,11 @@ $(document).ready(function(){
     */
 
     populateStatesDropdown();
+    PopulateLocalStorage();
 
     pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
 
     $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
-    
-    person_full_name = localStorage.getItem("sender_full_name");
-    person_email = localStorage.getItem("sender_email");
-
-    if(person_full_name != null)
-    {
-
-        $full_name.val(person_full_name);
-        $email.val(person_email);
-
-    }
-
-    //$Main_Pic.css({'transform': 'translate(0%, 100%)'});
 
     $Main_Pic.animate({
         top: "17%",
@@ -78,6 +66,8 @@ $(document).ready(function(){
 
         formatted_date = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
 
+        var proceed = ValidateInput();
+
         var sender = {
 
             name: full_name,
@@ -87,21 +77,57 @@ $(document).ready(function(){
             state_id: parseInt( await GetStateId(state) )
         }
 
-        alert("sender state Id " + sender.state_id);
-
-        newMessage = {
+        var newMessage = {
 
             sender_id: 1,
             content: $message.val(),
             date: formatted_date,
         }
 
-        //localStorage.setItem("sender_full_name", full_name[0] + " " + full_name[1]);
-        //localStorage.setItem("sender_email", newPerson.Email);
+        if(proceed){
 
-        SendMessage(sender, newMessage);
+            SendMessage(sender, newMessage);
+
+            SaveLocalStorage(sender);
+
+        }
 
     });
+
+    function ValidateInput(){
+
+        var full_name = $full_name.val();
+        var phone = parseInt($phone.val());
+        var email = $email.val();
+        var company = $company.val();
+
+        if(full_name == "" || full_name == null){
+
+            alert("Please fill out your full name");
+            return false;
+        }
+
+        if(!ValidatePhone(phone)){
+
+            alert("invalid phone number");
+            return false;
+        }
+
+        if(!ValidateEmail(email)){
+
+            alert("invalid email");
+            return false;
+        }
+
+        if(company == "" || company == null){
+
+            alert("Please fill out your company");
+            return false;
+        }
+
+        return true;
+
+    }
 
     async function GetCompanyId(company) {
 
@@ -259,6 +285,67 @@ $(document).ready(function(){
 			}
 		
 		});
+    }
+
+    function ValidatePhone(phoneNumber) {
+        // Define a regular expression for common phone number formats
+        const phoneRegex = /^(?:\(\d{3}\)\s?|\d{3}[-.\s]?)?\d{3}[-.\s]?\d{4}$/;
+      
+        // Test the phone number against the regular expression
+        return phoneRegex.test(phoneNumber);
+    }
+
+    function ValidateEmail(email) {
+        // Regular expression for basic email validation
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      
+        // Test the email against the regular expression
+        return emailRegex.test(email);
+    }
+
+    function PopulateLocalStorage(){
+
+        var full_name = localStorage.getItem("sender_full_name");
+        var email = localStorage.getItem("sender_email");
+        var company = localStorage.getItem("sender_company");
+        var phone_number = localStorage.getItem("sender_phone");
+        var state = localStorage.getItem("sender_state");
+
+        if(full_name != null)
+        {
+            $full_name.val(full_name);
+        }
+
+        if(email != null)
+        {
+            $email.val(email);
+        }
+
+        if(email != null)
+        {
+            $company.val(company);
+        }
+
+        if(phone_number != null)
+        {
+            $phone.val(phone_number);
+        }
+
+        if(state != null)
+        {
+            $state.val(state);
+        }
+
+    }
+
+    function SaveLocalStorage(info){
+
+        localStorage.setItem("sender_full_name", info.name);
+        localStorage.setItem("sender_email", info.email);
+        localStorage.setItem("sender_phone", info.number);
+        localStorage.setItem("sender_state", $state.val());
+        localStorage.setItem("sender_company", $company.val());
+
     }
 
 });
