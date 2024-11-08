@@ -42,7 +42,7 @@ Sender.findByInfo = (senderName, result) => {
 };
 
 Sender.getAll = result => {
-  sql.query("SELECT * FROM senders", (err, res) => {
+  sql.query("SELECT senders.id, senders.name, senders.email, senders.number, states.state_name, companies.company_name FROM senders, states, companies where senders.state_id = states.id and senders.company_id = companies.id", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);

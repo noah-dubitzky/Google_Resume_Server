@@ -57,7 +57,7 @@ $(document).ready(function(){
     $send_message.on("click", async function(){
         
         full_name = $full_name.val();
-        phone = parseInt($phone.val());
+        phone = $phone.val();
         email = $email.val();
         company = $company.val();
         state = $state.val();
@@ -97,7 +97,7 @@ $(document).ready(function(){
     function ValidateInput(){
 
         var full_name = $full_name.val();
-        var phone = parseInt($phone.val());
+        var phone = $phone.val();
         var email = $email.val();
         var company = $company.val();
 
@@ -289,7 +289,7 @@ $(document).ready(function(){
 
     function ValidatePhone(phoneNumber) {
         // Define a regular expression for common phone number formats
-        const phoneRegex = /^(?:\(\d{3}\)\s?|\d{3}[-.\s]?)?\d{3}[-.\s]?\d{4}$/;
+        const phoneRegex = /^(?:\+?(\d{1,3}))?[-. (]*(\d{1,4})[-. )]*(\d{1,4})[-. ]*(\d{1,4})[-. ]*(\d{1,9})$/;
       
         // Test the phone number against the regular expression
         return phoneRegex.test(phoneNumber);
