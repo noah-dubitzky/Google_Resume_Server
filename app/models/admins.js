@@ -43,7 +43,7 @@ Message.findById = (messageId, result) => {
 
 
 Admin.findByInfo = (username, password, result) => {
-  sql.query(`select * from admins where admins.password='${password}' and admins.username='${username}'`, (err, res) => {
+  sql.query(`select * from admin where admin.password='${password}' and admin.username='${username}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
