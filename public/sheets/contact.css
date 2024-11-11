@@ -44,5 +44,9 @@ body{
 
 #main_pic{
 
+    width: 30%;
+    margin-top: 4%;
+    margin-left: 4%;
     display: inline-block;
+    cursor: pointer;
 }

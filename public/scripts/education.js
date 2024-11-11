@@ -4,6 +4,7 @@ $(document).ready(function(){
 
     pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
 
+    /*
     $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
     
     $Main_Pic.animate({
@@ -12,5 +13,6 @@ $(document).ready(function(){
         right: "73%",
 
     }, 1000);
+    */
 
 });

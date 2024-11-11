@@ -7,19 +7,6 @@ $(document).ready(function(){
 
     pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
 
-    if(pic_metrics != null)
-    {
-        $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
-
-        $Main_Pic.animate({
-            top: "25%",
-            right: "1%",
-            width: "30%",
-            
-        }, 1000);
-
-    }
-
     $Main_Pic.on("mouseenter", function(){
 
         $(this).animate({
@@ -44,7 +31,7 @@ $(document).ready(function(){
 
         $(this).animate({
 
-            fontSize: "120%",
+            fontSize: "1.1vw",
 
         }, 500);
 
@@ -54,7 +41,7 @@ $(document).ready(function(){
 
         $(this).animate({
 
-            fontSize: "100%",
+            fontSize: "1vw",
 
         }, 500);
 

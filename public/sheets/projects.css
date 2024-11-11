@@ -4,18 +4,6 @@ body{
     overflow-x: hidden;
 }
 
-
-#profile_pic{
-    width: 60px;
-    height: 60px;
-    margin-left: 50px;
-    margin-right: 10px;
-    border: 1px solid grey;
-    border-radius: 60px;
-    float: left;
-    cursor: pointer;
-}
-
 #main_pic{
     display: inline-block;
     background-color: rgba(22, 25, 35, 1);
@@ -28,7 +16,7 @@ body{
 
 #title{
     font-family: Georgia, serif;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -37,6 +25,7 @@ body{
     height: fit-content;
     width: fit-content;
     opacity: 0;
+    margin: auto;
 }
 
 #title > h1{
@@ -49,14 +38,15 @@ body{
 .content{
     position: relative;
     width: 70%;
+    height: fit-content;
     margin: auto;
     margin-top: 100px;
-    background-color: rgb(14 36 64);
+    background-color: rgba(22, 25, 35, 1);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    font-size: 120%;
+    font-size: 1.2vw;
     color: white;
 }
 

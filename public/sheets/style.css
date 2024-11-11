@@ -5,24 +5,12 @@ body{
 
 
 #profile_pic{
+    position: absolute;
     width: 60px;
     height: 60px;
-    margin-left: 50px;
-    margin-right: 10px;
+    margin-left: 10px;
     border: 1px solid grey;
     border-radius: 60px;
     float: left;
-    cursor: pointer;
-}
-
-
-#main_pic{
-    position: absolute;
-    bottom: 1%;
-    right: 1%;
-    width: 30%;
-    background-color: rgba(22, 25, 35, 1);
-    border-radius: 25px;
-    box-shadow: -5px -5px 5px 5px rgba(22, 25, 35, 1);
     cursor: pointer;
 }

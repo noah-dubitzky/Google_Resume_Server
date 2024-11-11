@@ -1,9 +1,8 @@
 #content{
 
-    position: absolute;
-    left: 30%;
-    top: 20%;
-    width: 70%;
+    float: right;
+    margin-top: 4%;
+    width: 60%;
     opacity: 0;
 }
 
@@ -15,7 +14,7 @@
     margin-bottom: 30px;
     border-radius: 25px;
     display: inline-block;
-    width: 30%;
+    width: 33%;
     text-align: center;
     cursor: pointer;
     vertical-align: top;
@@ -25,7 +24,7 @@
 }
 
 .title{
-    font-size: 3vh;
+    font-size: 1.2vw;
 }
 
 .description{
@@ -33,4 +32,11 @@
     display: none;
     opacity: 0;
     font-size: 2vh;
+}
+
+#main_pic{
+
+    margin-left: 4%;
+    margin-top: 4%;
+    width: 20%;
 }

@@ -15,45 +15,11 @@ $(document).ready(function(){
     var previousClosestElement = null;
     var minDistance = Infinity;
 
-    pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
-
-    //  $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
-
-    //var content_position = $content.position();
-
-    $Main_Pic.animate({
-       // width: "30%"
-    }, 1000);
-
     $title.animate({
 
         opacity: "1",
 
     }, 1000);
-
-    /*
-    $content.each(function() {
-
-        $(this).on('mouseenter', function() {
-            // Your mouseover event logic here
-            $(this).animate({
-                width: "75%",
-                height: "auto",
-                'font-size': "135%"
-             }, 500);
-        });
-
-        $(this).on('mouseleave', function() {
-            // Your mouseover event logic here
-            $(this).animate({
-                width: "70%",
-                height: "auto",
-                'font-size': "120%"
-             }, 500);
-        });
-
-    });
-    */
 
     $(window).on('scroll', function() {
 
@@ -73,15 +39,13 @@ $(document).ready(function(){
             {
                 previousClosestElement.animate({
                     width: "70%",
-                    height: "auto",
-                    'font-size': "120%"
+                    'font-size': "1.2vw"
                 }, 500);
             }
 
             closestElement.animate({
                 width: "75%",
-                height: "auto",
-                'font-size': "135%"
+                'font-size': "1.35vw"
             }, 500);
 
             previousClosestElement = closestElement;
