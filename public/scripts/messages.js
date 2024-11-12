@@ -17,17 +17,6 @@ $(document).ready(function(){
 
     senders = new Map();
 
-    pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
-
-    $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
-    
-    $Main_Pic.animate({
-        top: "10%",
-        width: "10%",
-        right: "87%",
-        
-    }, 1000);
-
     class Sender{
         constructor(id){
             this.SenderID = id;

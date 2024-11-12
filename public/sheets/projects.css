@@ -38,7 +38,6 @@ body{
 .content{
     position: relative;
     width: 70%;
-    height: fit-content;
     margin: auto;
     margin-top: 100px;
     background-color: rgba(22, 25, 35, 1);
@@ -54,4 +53,10 @@ iframe, .content > img {
     margin-right: 10px;
     margin-top: 20px;
     float: left;
+}
+
+iframe{
+
+    width: 50%;
+    height: 20vw;
 }

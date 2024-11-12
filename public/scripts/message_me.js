@@ -43,17 +43,6 @@ $(document).ready(function(){
     populateStatesDropdown();
     PopulateLocalStorage();
 
-    pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
-
-    $Main_Pic.css({top: pic_metrics.top, width: pic_metrics.width, right: pic_metrics.right});
-
-    $Main_Pic.animate({
-        top: "17%",
-        width: "17%",
-        right: "73%",
-
-    }, 1000);
-
     $send_message.on("click", async function(){
         
         full_name = $full_name.val();
