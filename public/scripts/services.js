@@ -5,6 +5,26 @@ $(document).ready(function(){
     $services = $(".service");
     $content = $("#content");
 
+    $Main_Pic.on("mouseenter", function(){
+
+        $(this).animate({
+
+            width: "53%",
+
+        }, 700);
+
+    });
+
+    $Main_Pic.on("mouseleave", function(){
+
+        $(this).animate({
+
+            width: "50%",
+
+        }, 500);
+
+    });
+
     $content.animate({
 
         opacity: 1

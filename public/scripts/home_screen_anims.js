@@ -32,6 +32,7 @@ $(document).ready(function(){
         $(this).animate({
 
             fontSize: "1.1vw",
+            width: "45%",
 
         }, 500);
 
@@ -42,6 +43,7 @@ $(document).ready(function(){
         $(this).animate({
 
             fontSize: "1vw",
+            width: "40%"
 
         }, 500);
 

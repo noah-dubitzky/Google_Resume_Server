@@ -10,7 +10,7 @@ $(document).ready(function(){
 
             $(this).animate({
                 
-                width: "45%",
+                width: "45%"
         
             }, 500);
 
@@ -26,13 +26,19 @@ $(document).ready(function(){
 
         });
 
+        $(this).click(function(){
+            var elementId = $(this).attr("id"); // Get the ID of the clicked element
+            var newUrl = "https://" + elementId; // Construct the new URL
+            window.location.href = newUrl; // Redirect to the new URL
+          });
+
     });
 
     $Main_Pic.on("mouseenter", function(){
 
         $(this).animate({
 
-            width: "33%",
+            width: "53%",
 
         }, 700);
 
@@ -42,7 +48,7 @@ $(document).ready(function(){
 
         $(this).animate({
 
-            width: "30%",
+            width: "50%",
 
         }, 500);
 
