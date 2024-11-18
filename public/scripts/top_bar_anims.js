@@ -13,6 +13,13 @@ $(document).ready(function(){
     $services = $("#services");
     $education= $("#education");
 
+    $body = $("body");
+
+    $body.animate({
+
+        opacity: 1
+    }, 500);
+
     $top_bar.css({
         'position': 'sticky',
         'top': '0',
@@ -36,6 +43,10 @@ $(document).ready(function(){
         'color': 'white',
         'text-decoration': 'none'
     });
+
+    const pageID = localStorage.getItem("page");
+    const pageSelected = "#" + pageID;
+    $(pageSelected).css("color", "red");
 
     $Top_Clickables.on("mouseenter", function(){
 
@@ -83,7 +94,7 @@ $(document).ready(function(){
 
         $(this).on("click", function(){
 
-            GetPicMetrics($Main_Pic);
+            localStorage.setItem('page', $(this).attr("id"));
 
             window.location.href = $(this).attr("id") + ".html";
 
@@ -92,24 +103,6 @@ $(document).ready(function(){
     });
 
 });
-
-function GetPicMetrics($Main_Pic){
-
-    pic_width = $Main_Pic.css("width");
-    pic_top = $Main_Pic.css("top");
-    pic_right = $Main_Pic.css("right");
-
-    pic_metrics = {
-        width: pic_width, 
-        top: pic_top, 
-        right: pic_right
-    };
-
-    localStorage.setItem("pic_width", pic_metrics.width);
-    localStorage.setItem("pic_top", pic_metrics.top);
-    localStorage.setItem("pic_right", pic_metrics.right);
-
-}
 
 function PopulateTopBar(){
     // Define the HTML block
@@ -133,4 +126,5 @@ function PopulateTopBar(){
 
     // Insert the HTML block right after the <head> tag
     $('head').after(htmlBlock);
+    
 }

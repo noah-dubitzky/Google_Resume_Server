@@ -5,7 +5,7 @@ $(document).ready(function(){
     $Main_Pic = $("#main_pic");
     $Content = $("#content");
 
-    pic_metrics = {top: localStorage.getItem("pic_top"), width: localStorage.getItem("pic_width"), right: localStorage.getItem("pic_right")}
+    localStorage.setItem('page', "index");
 
     $Main_Pic.on("mouseenter", function(){
 

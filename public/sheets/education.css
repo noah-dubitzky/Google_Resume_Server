@@ -27,8 +27,6 @@
 #main_pic{
     position: relative;
     width: 50%;
-    background-color: rgba(22, 25, 35, 1);
     border-radius: 25px;
-    box-shadow: -5px -5px 5px 5px rgba(22, 25, 35, 1);
     cursor: pointer;
 }
