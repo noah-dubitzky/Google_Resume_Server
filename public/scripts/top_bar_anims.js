@@ -60,11 +60,14 @@ $(document).ready(function(){
 
     $Top_Clickables.on("mouseleave", function(){
 
-        $(this).animate({
+        if( $(this).attr("id") != localStorage.getItem("page"))
+        {
+            $(this).animate({
 
-            color: "white",
+                color: "white",
 
-        }, 200);
+            }, 200);
+        }
 
     });
 
@@ -94,9 +97,11 @@ $(document).ready(function(){
 
         $(this).on("click", function(){
 
-            localStorage.setItem('page', $(this).attr("id"));
-
-            window.location.href = $(this).attr("id") + ".html";
+            if( $(this).attr("id") != localStorage.getItem("page"))
+            {
+                localStorage.setItem('page', $(this).attr("id"));
+                window.location.href = $(this).attr("id") + ".html";
+            }
 
         });
 
