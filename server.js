@@ -25,17 +25,9 @@ app.get('/', function(req, res) {
     res.send('hello world');
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, _ =>{
     console.log(`APP deployed at Port ${PORT}`);
 });
-
-var http = require('http');
-
-//create a server object:
-http.createServer(function (req, res) {
-  res.write('A Monk in Cloud'); //write a response to the client
-  res.end(); //end the response
-}).listen(80); //the server object listens on port 80
 
 
