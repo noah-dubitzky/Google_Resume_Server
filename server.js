@@ -25,7 +25,9 @@ app.get('/', function(req, res) {
     res.send('hello world');
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, _ =>{
     console.log(`APP deployed at Port ${PORT}`);
 });
+
+
