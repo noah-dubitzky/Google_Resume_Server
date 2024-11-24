@@ -3,20 +3,6 @@ body{
     overflow-x: hidden;
 }
 
-#sub_title{
-
-    font-family: Georgia, serif;
-    display: inline-block;
-    margin-top: 2%;
-    margin-left: 4%;
-    width: 40%;
-    padding: 20px;
-    right: 0%;
-    color: white;
-    cursor: pointer;
-    font-size: 1vw;
-}
-
 .contact{
 
     display: inline-flex;
@@ -38,11 +24,8 @@ body{
 
 #content_container{
 
-    position: absolute;
-    transform: translate(-100%, 0%);
-    top: 20%;
-    left: 100%;
-    width: 50%;
+    width: fit-content;
+    margin-left: 2%;
 
 }
 
@@ -53,14 +36,5 @@ body{
 
 .contact > p{
 
-    font-size: 1vw;
-}
-
-#main_pic{
-
-    width: 50%;
-    margin-top: 4%;
-    margin-left: 4%;
-    display: inline-block;
-    cursor: pointer;
+    font-size: 2vw;
 }

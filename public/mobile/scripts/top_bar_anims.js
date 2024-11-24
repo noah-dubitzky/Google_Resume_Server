@@ -38,10 +38,10 @@ $(document).ready(function(){
         'background-color': 'rgb(14 36 96)',
         'text-align': 'center',
         'border-radius': '20px',
-        'padding': '1%',
+        'padding': '5%',
         'width': '90%',
         'margin': 'auto',
-        'margin-top': '1%'
+        'margin-top': '2%'
     });
 
     $Top_Clickables.each(function(){
@@ -59,14 +59,14 @@ function PopulateTopBar(){
     // Define the HTML block
     var htmlBlock = `
     <div id="top_bar">
-        <p class="top_clickables" id="admin">Admin</p>
-        <p class="top_clickables" id="message_me">Message Me</p>
-        <p class="top_clickables" id="projects">My Projects</p>
-        <p class="top_clickables" id="education">Education</p>
-        <p class="top_clickables" id="services">Services</p>
-        <p class="top_clickables" id="resume">Resume</p>
-        <p class="top_clickables" id="contact">Contact</p>
         <p class="top_clickables" id="index">Home</p>
+        <p class="top_clickables" id="contact">Contact</p>
+        <p class="top_clickables" id="resume">Resume</p>
+        <p class="top_clickables" id="services">Services</p>
+        <p class="top_clickables" id="education">Education</p>
+        <p class="top_clickables" id="projects">My Projects</p>
+        <p class="top_clickables" id="message_me">Message Me</p>
+        <p class="top_clickables" id="admin">Admin</p>
     </div>`;
 
     //other pages to add
