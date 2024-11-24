@@ -1,23 +1,15 @@
 
-#main_pic{
-
-    width: 20%;
-    margin-left: 4%;
-    margin-top: 4%;
-}
-
 #Message_Box{
 
-    position: absolute;
     font-family: Georgia, serif;
-    left: 50%;
-    top: 20%;
-    width: 40%;
+    width: 90%;
     background-color: rgba(22, 25, 35, 1);
     padding: 10px;
     border-radius: 25px;
     color: white;
-    font-size: 1.1vw;
+    font-size: 2vw;
+    width: fit-content;
+    margin: auto;
 }
 
 #Message_Box input, textarea, select{
@@ -25,18 +17,9 @@
     border-radius: 5px;
     font-family: Georgia, serif;
     text-align: top;
-    font-size: 1.1vw;
+    font-size: 2.5vw;
     font-weight: 400;
 
-}
-
-#content{
-    font-family: Georgia, serif;
-    font-size: 1dvw;
-    padding: 20px;
-    color: white;
-    cursor: pointer;
-    margin-left: 4%;
 }
 
 #send_message{
