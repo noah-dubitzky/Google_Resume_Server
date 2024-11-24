@@ -9,11 +9,11 @@ body{
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 40%;
+    width: 45%;
     top: 50%;
     opacity: 1;
     padding: 5px;
-    margin: 2%;
+    margin: 1%;
     color: white;
     background-color: rgba(22, 25, 35, 1);
     border-radius: 25px;
@@ -24,17 +24,17 @@ body{
 
 #content_container{
 
-    width: fit-content;
+    width: 100%;
     margin-left: 2%;
 
 }
 
 .contact > img{
 
-    width: 30%;
+    width: 48%;
 }
 
 .contact > p{
 
-    font-size: 2vw;
+    font-size: 2.5vw;
 }
