@@ -1,40 +1,29 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
 <head>
-    <script type="text/javascript" src="scripts/jquery-3.0.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script type="text/javascript" src="scripts/top_bar_anims.js"></script>
-    <script type="text/javascript" src="scripts/home_screen_anims.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Redirect</title>
+    <script>
+        // Function to detect if the user is on a mobile device
+        function isMobileDevice() {
+            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        }
 
-    <link rel="stylesheet" href="sheets/style.css">
-    <link rel="stylesheet" href="sheets/home_screen.css">
-
+        // Redirect based on device type
+        window.onload = function () {
+            if (isMobileDevice()) {
+                // Redirect to the mobile page
+                window.location.href = "/mobile/index.html"; // Change to your mobile-specific page
+            } else {
+                // Redirect to the desktop page
+                window.location.href = "/mobile/index.html"; // Change to your desktop-specific page
+            }
+        };
+    </script>
 </head>
-
-
-<div id="content">
-
-    <a style="font-size: 120%;">
-        Welcome to my Website
-    </a>
-
-    <h1>
-        Hi, I'm <a style="color:red;">Noah Dubitzky</a>
-        <br>
-        A Software Developer
-    </h1>
-
-    <p>
-        I am a graduate of computer science from the University of Southern New Hampshire. 
-        <br>When I was 14 years old, I taught myself how to code and develop software.
-        <br>Ever since then, I have dived non stop into the facinating world of coding and computer science!
-        <br>Please click on any of the links above to learn about me! 
-    </p>
-
-</div>
-
-<img id="main_pic" src="assets/Profile_Top.png" alt="^">
-
+<body>
+    <h1>Redirecting...</h1>
+    <p>If you are not redirected automatically, please check your device and try again.</p>
 </body>
 </html>

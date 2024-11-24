@@ -1,0 +1,16 @@
+#main_pic{
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+
+#content{
+    display: block;
+    font-family: Georgia, serif;
+    padding: 20px;
+    color: white;
+    width: fit-content;
+    font-size: 3vw;
+    margin: auto;
+}
