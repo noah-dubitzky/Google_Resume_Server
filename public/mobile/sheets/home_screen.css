@@ -14,3 +14,26 @@
     font-size: 4vw;
     margin: auto;
 }
+
+#top_bar{
+    z-index :  10;
+    background-color: rgba(36, 36, 36, 1);
+    font-family :  Georgia, serif;
+    color :  white;
+    padding :  10px;
+}
+
+.top_clickables{
+    display:  block;
+    cursor:  pointer;
+    color :  white;
+    font-size :  50px;
+    text-decoration :  none;
+    background-color :  rgb(14 36 96);
+    text-align :  center;
+    border-radius :  20px;
+    padding :  5%;
+    width :  90%;
+    margin :  auto;
+    margin-top :  2%;
+}
