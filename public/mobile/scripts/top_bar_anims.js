@@ -25,8 +25,7 @@ $(document).ready(function(){
         'background-color': 'rgba(36, 36, 36, 1)',
         'font-family': 'Georgia, serif',
         'color': 'white',
-        'padding': '10px',
-        'font-size': '50px'
+        'padding': '10px'
     });
 
     // Add CSS to the top clickables
@@ -34,6 +33,7 @@ $(document).ready(function(){
         'display': 'block',
         'cursor': 'pointer',
         'color': 'white',
+        'font-size': '50px',
         'text-decoration': 'none',
         'background-color': 'rgb(14 36 96)',
         'text-align': 'center',
