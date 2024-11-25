@@ -26,7 +26,7 @@ $(document).ready(function(){
         'font-family': 'Georgia, serif',
         'color': 'white',
         'padding': '10px',
-        'font-size': '7vw'
+        'font-size': '50px'
     });
 
     // Add CSS to the top clickables
