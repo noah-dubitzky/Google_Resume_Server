@@ -33,7 +33,7 @@ $(document).ready(function(){
         'display': 'block',
         'cursor': 'pointer',
         'color': 'white',
-        'font-size': '50px',
+        'font-size': '500px',
         'text-decoration': 'none',
         'background-color': 'rgb(14 36 96)',
         'text-align': 'center',
