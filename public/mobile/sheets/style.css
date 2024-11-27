@@ -19,3 +19,7 @@ body{
     font-size: 3vw;
     margin: auto;
 }
+
+button{
+    font-size: 150%;
+}

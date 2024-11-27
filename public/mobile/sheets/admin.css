@@ -3,21 +3,20 @@
     position: absolute;
     top: 20%;
     left: 50%;
-    width: 550px;
+    width: 800px;
     transform: translate(-50%, 0%);
     font-family: Georgia, serif;
     background-color: rgba(22, 25, 35, 1);
     padding: 10px;
     border-radius: 25px;
     color: white;
-    display: flex;
-    align-items: top;
 }
 
 #fields{
 
-    display: inline-block;
     margin-left: 5%;
+    vertical-align: top;
+    font-size: 50px;
 
 }
 
@@ -26,16 +25,11 @@
     border-radius: 5px;
     font-family: Georgia, serif;
     text-align: top;
-    font-size: large;
+    font-size: 50px;
     font-weight: 400;
 
 }
 
 #main_pic{
-    position: relative;
-    width: 300px;
-    background-color: rgba(22, 25, 35, 1);
-    border-radius: 25px;
-    box-shadow: -5px -5px 5px 5px rgba(22, 25, 35, 1);
-    cursor: pointer;
+    width: 500px;
 }
