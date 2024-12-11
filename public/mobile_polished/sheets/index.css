@@ -27,6 +27,7 @@ body {
     color: white;
     text-decoration: none;
     margin-right: auto;
+    margin-top: 3px;
   }
 
   .top-bar .right-tabs {
@@ -37,7 +38,7 @@ body {
   }
 
   .top-bar .right-tabs li {
-    margin-left: 5px;
+    margin-left: 0px;
   }
 
   .top-bar a {
