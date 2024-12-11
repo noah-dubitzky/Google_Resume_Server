@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     overflow: auto;
+    padding-bottom: 70px;
   }
 
   body::-webkit-scrollbar {
@@ -47,6 +48,19 @@ body {
     border-radius: 5px;
   }
 
+  .footer {
+    position: fixed; /* Sticks the footer to the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 100; /* Ensures it overlaps content */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  }
+
   .full-width-image {
     width: 100%;
     display: block;
@@ -58,7 +72,7 @@ body {
     display: block;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 0%;
+    padding-top: 1%;
     padding-bottom: 2%;
   }
 
@@ -82,7 +96,7 @@ body {
       padding-left: 5%;
       padding-right: 5%;
       padding-top: 0%;
-      padding-bottom: 2%;
+      padding-bottom: 0%;
       display: flex;
       justify-content: space-between;
       text-align: center;
@@ -93,4 +107,16 @@ body {
     .service > .description{
 
       font-size: 2vw;
+    }
+
+    #education{
+
+      display: flex;
+      justify-content: space-between;
+      font-size: 2vw;
+    }
+
+    #education > img{
+
+      width: 50%;
     }
