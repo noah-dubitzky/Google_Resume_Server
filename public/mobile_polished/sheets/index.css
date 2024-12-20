@@ -21,12 +21,12 @@ body {
     padding: 10px 20px;
   }
 
-  .top-bar .left-tab {
+  .top-bar .left-tabs {
     float: left;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    margin-right: auto;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
   }
 
   .top-bar .right-tabs {
@@ -88,7 +88,7 @@ body {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
   }
 
-  .content{
+  .section{
 
     display: block;
     padding-left: 5%;
@@ -164,7 +164,7 @@ body {
       cursor: pointer;
     }
 
-    #input_email{
+    #Sign_Up{
 
       width: fit-content;
       margin: auto;
