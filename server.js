@@ -21,6 +21,7 @@ require("./app/routes/sender_routes.js")(app);
 require("./app/routes/states_routes.js")(app);
 require("./app/routes/companies_routes.js")(app);
 require("./app/routes/email_list_routes.js")(app);
+require("./app/routes/email_routes.js")(app);
 
 app.get('/', function(req, res) {
     res.send('hello world');
